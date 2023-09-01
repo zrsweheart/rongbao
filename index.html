@@ -276,10 +276,10 @@
 
  
   <section class="main"  id="tabContent1" >  
-<iframe id="frame_content" src="resume.html" scrolling="no" frameborder="0" onload="this.height=100"></iframe>
+<iframe id="frame_content1" src="resume.html" scrolling="no" frameborder="0" onload="this.height=100"></iframe>
     <script type="text/javascript">
     function reinitIframe(){
-    var iframe = document.getElementById("frame_content");
+    var iframe = document.getElementById("frame_content1");
     try{
     var bHeight = iframe.contentWindow.document.body.scrollHeight;
     var dHeight = iframe.contentWindow.document.documentElement.scrollHeight;
@@ -292,8 +292,19 @@
   </section>
 
   <section class="main"  id="tabContent2" style="display:none;">
-<iframe id="frame_content" src="blog.html" scrolling="no" frameborder="0" onload="this.height=100"></iframe>
-    
+<iframe id="frame_content2" src="blog.html" scrolling="no" frameborder="0" onload="this.height=100"></iframe>
+        <script type="text/javascript">
+    function reinitIframe(){
+    var iframe = document.getElementById("frame_content2");
+    try{
+    var bHeight = iframe.contentWindow.document.body.scrollHeight;
+    var dHeight = iframe.contentWindow.document.documentElement.scrollHeight;
+    var height = Math.max(bHeight, dHeight);
+    iframe.height =  height;
+    }catch (ex){}
+    }
+    window.setInterval("reinitIframe()", 200);
+    </script>
  </section>
 
   
