@@ -64,10 +64,80 @@
 </head>
 
 <body>
-    <div style="float:left;width:16%;height:660px;text-align:center;  ">
-    <header class="header"></header>
+     <header class="header"></header>  
+ <article class="container" >
+    <section class="side" id="side">
+        
+    <label class="switch" style="display: none;" onchange="switchFixed()">
+                <script type="text/javaScript">
+                    function switchFixed() {
+                    var value = document.getElementById('side').style.position === 'fixed' ? 'absolute' : 'fixed';
+                    document.getElementById('side').style.position = value;
+                }
+            </script>
+                <input id="cb" type="checkbox">
+                <span class="slider round"></span>
+            </label>
+            <style>
+                @media (min-width: 414px) {
+                    .switch {
+                        position: relative;
+                        display: inline-block !important;
+                        width: 60px;
+                        height: 34px;
+                    }
 
-    <article class="container" >
+                    .switch input {
+                        display: none;
+                    }
+
+                    .slider {
+                        position: absolute;
+                        cursor: pointer;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        background-color: #ccc;
+                        -webkit-transition: .4s;
+                        transition: .4s;
+                    }
+
+                    .slider:before {
+                        position: absolute;
+                        content: "";
+                        height: 26px;
+                        width: 26px;
+                        left: 4px;
+                        bottom: 4px;
+                        background-color: white;
+                        -webkit-transition: .4s;
+                        transition: .4s;
+                    }
+
+                    input:checked+.slider {
+                        background-color: #1abc9c;
+                    }
+
+                    input:focus+.slider {
+                        box-shadow: 0 0 1px #1abc9c;
+                    }
+
+                    input:checked+.slider:before {
+                        -webkit-transform: translateX(26px);
+                        -ms-transform: translateX(26px);
+                        transform: translateX(26px);
+                    }
+
+                    .slider.round {
+                        border-radius: 34px;
+                    }
+
+                    .slider.round:before {
+                        border-radius: 50%;
+                    }
+                }
+            </style>
 
             <!-- 个人肖像 -->
             <section class="me">
@@ -193,10 +263,10 @@
             </section>
         </section>
     </article>
-</div>
+
  <!-- 右侧 -->
 
- <div id="tabDiv" style="width:100%;height:100%;margin: auto; ">
+ <div id="tabDiv" class="main" >
 
   <div id="tabsHead" >
          <aside>
@@ -215,12 +285,12 @@
     </aside>
 </div>
 
-     <div id="tabContent1"  style="width:84%;height:660px;float:left;  ">
+     <div id="tabContent1"   >
        <div class="container3">
             <iframe id="myIframe1" name="hideIframe1" style="" src="resume.html" frameborder="0" ></iframe>
        </div>
     </div>
-    <div id="tabContent2" style="width:84%;height:660px;float:left; display: none;position:relative;margin: 30px auto">
+    <div id="tabContent2" style=" display: none; ">
         <div class="container3">
             <iframe id="myIframe2" name="hideIframe1" style="" src="blog.html" frameborder="0"  ></iframe>
         </div>
