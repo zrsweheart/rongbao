@@ -60,15 +60,7 @@
             document.getElementById(tabHeadId).blur();
         }
 </script>
-      <script type="text/javascript">
-                 $(document).ready(function() {
-  $("tabContent1").load("resume.html #resume");
-});
-                   $(document).ready(function() {
-  $("tabContent2").load("blog.html #blog");
-});
-
-            </script>
+    
 
 </head>
 
@@ -283,11 +275,12 @@
  <article class="container" id="tabDiv">
 
   <section class="main"  id="tabContent1" >  
-
+<object type="text/html" data="resume.html" style="width:100%; height:100%">
+    </object>
   </section>
 
   <section class="main"  id="tabContent2" style="display:none;">
-
+<object type="text/html" data="blog.html" style="width:100%; height:100%">
  </section>
     </article>
     
