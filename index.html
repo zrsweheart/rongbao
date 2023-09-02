@@ -276,10 +276,10 @@
 
  
   <section class="main" id="tabContent1" style="width:75%; ">  
-<iframe id="frame_content1" src="blog.html" scrolling="no" frameborder="0" onload="this.height=100" width="100%"></iframe>
+<iframe id="frame_content" src="blog.html" scrolling="no" frameborder="0" onload="this.height=100" width="100%"></iframe>
     <script type="text/javascript">
     function reinitIframe(){
-    var iframe = document.getElementById("frame_content1");
+    var iframe = document.getElementById("frame_content");
     try{
     var bHeight = iframe.contentWindow.document.body.scrollHeight;
     var dHeight = iframe.contentWindow.document.documentElement.scrollHeight;
@@ -306,6 +306,26 @@
     window.setInterval("reinitIframe()", 200);
     </script>
  </section>
+       <section class="main" id="tabContent3" style="display:none;width:75%; ">
+<iframe id="frame_content3" src="blog.html" scrolling="no" frameborder="0" onload="this.height=100" width="100%"></iframe>
+        <script type="text/javascript">
+    function reinitIframe(){
+    var iframe = document.getElementById("frame_content3");
+    try{
+    var bHeight = iframe.contentWindow.document.body.scrollHeight;
+    var dHeight = iframe.contentWindow.document.documentElement.scrollHeight;
+    var height = Math.max(bHeight, dHeight);
+    iframe.height =  height;
+    }catch (ex){}
+    }
+    window.setInterval("reinitIframe()", 200);
+    </script>
+ </section>
+
+       <section class="main" id="tabContent4" style="display:none;width:75%; ">
+<iframe id="frame_content4" src="blog.html" scrolling="no" frameborder="0" height="100%" width="100%"></iframe>
+       
+ </section>
 
   
 
@@ -324,6 +344,18 @@
                   <a id="tabs2" href="javascript:showTab('tabs2','tabContent2')">博客</a>
             </li>
         </ul>
+              <ul>
+            <li>
+                  <a id="tabs3" href="javascript:showTab('tabs3','tabContent3')">页面3</a>
+            </li>
+        </ul>
+
+              <ul>
+            <li>
+                  <a id="tabs4" href="javascript:showTab('tabs4','tabContent4')">页面4</a>
+            </li>
+        </ul>
+
 
     
     </aside>
